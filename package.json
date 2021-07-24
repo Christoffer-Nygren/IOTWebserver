@@ -1,0 +1,25 @@
+{
+  "name": "iotwebserver",
+  "version": "1.0.0",
+  "description": "Middle hand for notifications",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Christoffer-Nygren/IOTWebserver.git"
+  },
+  "keywords": [
+    "notification"
+  ],
+  "author": "Christoffer Nygren",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Christoffer-Nygren/IOTWebserver/issues"
+  },
+  "homepage": "https://github.com/Christoffer-Nygren/IOTWebserver#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
