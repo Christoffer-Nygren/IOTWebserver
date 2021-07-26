@@ -7,6 +7,7 @@ const port = 3000
 
 app.use(bodyParser.json())
 
+//Function to send notification to twilio through a http post.
 async function sendNotification(stringToSend)  {
   let data = await new FormData();
   data.append('To', process.env.TWILIO_TO);
@@ -34,20 +35,22 @@ async function sendNotification(stringToSend)  {
 
 }
 
+//Start page of the express server
 app.get('/', (req, res) => {
-  console.log(process.env.TWILIO_AUTH_TOKEN);
   res.send('Notification handler')
 })
 
+//Page used by pybytes to send notification to the express server
 app.post('/test', async (req, res) => {
   console.log(req.body);
   let signal = req.body.signal
-  signal == 1 ? await sendNotification(req.body.payload) : console.log('Wrong notification');
+  signal == 1 ? await sendNotification(req.body.payload) : console.log('Wrong notification');//Checks if signal is right
 
   //res.status(200).end()
   res.send('Notification sent')
 })
 
+//The server
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
